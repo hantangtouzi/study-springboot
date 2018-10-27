@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Datatable显示所有的用户</title>
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"></script>
+</head>
+<body>
+<div class="content-wrapper">
+    <table id="contents" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>USERNAME</th>
+            <th>PASSWORD</th>
+            <th>EMAIL</th>
+        </tr>
+        </thead>
+
+    </table>
+</div>
+
+<script>
+    $(function () {
+        $('#contents').DataTable({
+            "ajax": "/user/list",
+            "columns": [
+                {"data": "id"},
+                {"data": "username"},
+                {"data": "password"},
+                {"data": "email"}
+            ]
+        });
+    });
+</script>
+</body>
+</html>

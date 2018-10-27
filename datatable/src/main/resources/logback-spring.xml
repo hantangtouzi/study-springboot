@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.hantangtouzi.datatable" level="info"/>
+    <!--<logger name="ch.qos.logback" level="error" />-->
+    <logger name="org.springframework" level="error"/>
+    <logger name="org.apache" level="error"/>
+    <logger name="com.zaxxer" level="error"/>
+    <!--<logger name="org.springframework.test" level="error" />-->
+    <logger name="org.thymeleaf" level="error"/>
+
+    <!--<springProfile name="staging">-->
+    <!--<logger name="com.hantangtouzi.jantent" level="error" />-->
+    <!--</springProfile>-->
+
+    <!--<root level="ERROR">-->
+    <!--<appender-ref ref="console" />-->
+    <!--</root>-->
+</configuration>
