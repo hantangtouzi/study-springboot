@@ -1,0 +1,25 @@
+package com.hantangtouzi.first;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author WilliamChang.
+ * Created on 2018/11/5 18:19
+ */
+
+@RestController
+@EnableAutoConfiguration
+public class FirstApplication {
+
+    @RequestMapping("/")
+    public String home() {
+        return "Hello World!";
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(FirstApplication.class, args);
+    }
+}
