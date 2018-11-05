@@ -11,6 +11,7 @@
 
 1. first-application：最简单的Springboot入门配置
 2. datatable: Springboot与优秀的表格控件datatable的综合示例
+3. security-helloworld：Spring Security入门配置
 
 #### 使用说明
 
