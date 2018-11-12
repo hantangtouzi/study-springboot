@@ -10,3 +10,5 @@ logging:
 spring:
   thymeleaf:
     cache: false
+  profiles:
+    active: test
