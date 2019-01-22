@@ -12,6 +12,7 @@
         <module>datatable</module>
         <module>first-application</module>
         <module>security-helloworld</module>
+        <module>security-contacts</module>
     </modules>
 
     <parent>
