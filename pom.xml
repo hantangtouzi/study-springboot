@@ -13,6 +13,7 @@
         <module>first-application</module>
         <module>security-helloworld</module>
         <module>security-contacts</module>
+        <module>security-tutorial</module>
     </modules>
 
     <parent>
