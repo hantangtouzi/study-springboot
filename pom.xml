@@ -14,6 +14,7 @@
         <module>security-helloworld</module>
         <module>security-contacts</module>
         <module>security-tutorial</module>
+        <module>security-insecure</module>
     </modules>
 
     <parent>
