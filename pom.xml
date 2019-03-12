@@ -15,6 +15,7 @@
         <module>security-contacts</module>
         <module>security-tutorial</module>
         <module>security-insecure</module>
+        <module>email</module>
     </modules>
 
     <parent>
