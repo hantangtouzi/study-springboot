@@ -16,6 +16,7 @@
         <module>security-tutorial</module>
         <module>security-insecure</module>
         <module>email</module>
+        <module>helloworld</module>
     </modules>
 
     <parent>
