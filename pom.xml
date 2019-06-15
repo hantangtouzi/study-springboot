@@ -17,6 +17,7 @@
         <module>security-insecure</module>
         <module>email</module>
         <module>helloworld</module>
+        <module>datasource-demo</module>
     </modules>
 
     <parent>
