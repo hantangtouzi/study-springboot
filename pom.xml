@@ -19,6 +19,7 @@
         <module>helloworld</module>
         <module>datasource-demo</module>
         <module>multi-datasource-demo</module>
+        <module>simple-jdbc-demo</module>
     </modules>
 
     <parent>
