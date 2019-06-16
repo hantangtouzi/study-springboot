@@ -20,6 +20,7 @@
         <module>datasource-demo</module>
         <module>multi-datasource-demo</module>
         <module>simple-jdbc-demo</module>
+        <module>transaction-programmatic-demo</module>
     </modules>
 
     <parent>
