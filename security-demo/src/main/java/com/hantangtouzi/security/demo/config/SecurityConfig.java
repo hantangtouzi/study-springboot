@@ -1,6 +1,5 @@
-package com.hantangtouzi.security.helloworld.config;
+package com.hantangtouzi.security.demo.config;
 
-import com.hantangtouzi.security.helloworld.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,12 +9,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * @author WilliamChang.
- * Created on 2018/11/6 0:47
+ * Created on 2019-07-01 20:05:50
  */
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()

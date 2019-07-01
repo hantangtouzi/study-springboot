@@ -21,6 +21,7 @@
         <module>multi-datasource-demo</module>
         <module>simple-jdbc-demo</module>
         <module>transaction-programmatic-demo</module>
+        <module>security-demo</module>
     </modules>
 
     <parent>
