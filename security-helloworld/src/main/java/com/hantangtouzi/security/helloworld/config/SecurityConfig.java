@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * @author WilliamChang.
@@ -24,16 +25,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/css/**", "/index").permitAll()
                 .antMatchers("/user/**").hasRole("USER")
                 .and()
-                .formLogin().loginPage("/login").failureUrl("/login-error");
+                .formLogin().loginPage("/login").failureUrl("/login-error")
+                .and()
+                .logout().logoutSuccessUrl("/");
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        // 这是简单的示例.
-        auth.inMemoryAuthentication()
-                .withUser(User.withDefaultPasswordEncoder().username("user").password("password").roles("USER"));
-
-        // auth.userDetailsService(accountService).passwordEncoder(passwordEncoder());
+        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
+                .withUser("user").password(new BCryptPasswordEncoder().encode("pw")).roles("USER")
+                .and()
+                .withUser("admin").password(new BCryptPasswordEncoder().encode("pw")).roles("user", "admin");
     }
 
 }
