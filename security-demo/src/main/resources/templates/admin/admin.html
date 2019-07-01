@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>SecurityDemo-admin</title>
@@ -8,6 +8,11 @@
     <h1>后台页面</h1>
     <div>
         <a href="/">返回首页</a>
+    </div>
+    <div>
+        <form method="post" th:action="@{/logout}">
+            <input type="submit" value="Logout">
+        </form>
     </div>
 </body>
 </html>

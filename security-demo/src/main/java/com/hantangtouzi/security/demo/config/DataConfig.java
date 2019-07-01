@@ -13,19 +13,17 @@ import javax.sql.DataSource;
  * Created on 2019-07-01 20:04:52
  */
 
+@Configuration
 public class DataConfig {
-    @Configuration
-    public class DataSourceConfig {
 
-        // @Profile("test")
-        @Bean
-        public DataSource embeddedDataSource() {
-            return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("classpath:db/h2/schema.sql").build();
-        }
+    // @Profile("test")
+    @Bean
+    public DataSource embeddedDataSource() {
+        return new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).addScript("classpath:db/h2/schema.sql").build();
+    }
 
-        @Bean
-        public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-            return new JdbcTemplate(dataSource);
-        }
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
     }
 }

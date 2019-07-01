@@ -16,22 +16,27 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-                .antMatchers("/css/**", "/index").permitAll()
+        http.formLogin()
+                .loginPage("/login")
+                .permitAll()
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+                .invalidateHttpSession(true)
+                .and()
+                .authorizeRequests()
+                .antMatchers("/css/**", "/index", "/").permitAll()
                 .antMatchers("/user/**").hasRole("USER")
                 .antMatchers("/admin").hasRole("ADMIN")
-                .and()
-                .formLogin().loginPage("/login").failureUrl("/login-error")
-                .and()
-                .logout().logoutSuccessUrl("/");
+                .anyRequest().permitAll();
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("user").password(new BCryptPasswordEncoder().encode("pw")).roles("USER")
+                .withUser("user").password(new BCryptPasswordEncoder().encode("user")).roles("USER")
                 .and()
-                .withUser("admin").password(new BCryptPasswordEncoder().encode("pw")).roles("user", "admin");
+                .withUser("admin").password(new BCryptPasswordEncoder().encode("admin")).roles("USER", "ADMIN");
     }
 
 }
