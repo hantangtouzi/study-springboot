@@ -19,7 +19,7 @@ import java.util.List;
  */
 
 @Service
-public class UserSerrvice implements UserDetailsService {
+public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     private UserDao userDao;
 
@@ -31,6 +31,7 @@ public class UserSerrvice implements UserDetailsService {
             List<GrantedAuthority> authorities = new ArrayList<>();
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
             // return new UserDetails(user.getUsername(), user.getPassword(), authorities);
+            return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
         }
 
         throw new RuntimeException("用户名或者密码错误！");
