@@ -30,9 +30,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-                .withUser("user").password(new BCryptPasswordEncoder().encode("pw")).roles("USER")
+                .withUser("user").password(new BCryptPasswordEncoder().encode("user")).roles("USER")
                 .and()
-                .withUser("admin").password(new BCryptPasswordEncoder().encode("pw")).roles("User", "Admin");
+                .withUser("admin").password(new BCryptPasswordEncoder().encode("admin")).roles("USER", "ADMIN");
     }
 
 }

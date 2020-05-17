@@ -12,3 +12,8 @@ spring:
     cache: false
   profiles:
     active: test
+
+#  security:
+#    user:
+#      name: root
+#      password: root
