@@ -18,7 +18,7 @@ import java.util.List;
  * Created on 2018/11/12 12:38
  */
 
-@Service
+@Service("userDetailsService")
 public class AccountService implements UserDetailsService {
     @Autowired
     private UserDao userDao;
