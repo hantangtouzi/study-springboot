@@ -1,6 +1,5 @@
 package com.hantangtouzi.simplejdbcdemo;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -18,7 +17,6 @@ import java.util.List;
  * Created on 2019-06-16 21:19:00
  */
 
-@Slf4j
 @Repository
 public class FooDao {
 

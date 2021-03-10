@@ -1,14 +1,10 @@
 package com.hantangtouzi.simplejdbcdemo;
 
-import lombok.Data;
-
 /**
  * @author WilliamChang.
  * Created on 2019-06-16 21:18:13
  */
 
-@Data
-// @Builder
 public class Foo {
     private Long id;
     private String bar;
